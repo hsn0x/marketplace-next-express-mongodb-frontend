@@ -86,7 +86,7 @@ const NavbarScreen = () => {
                             <Image
                                 src="/hsn_logo.png"
                                 objectFit="cover"
-                                alt="HSN Marketplace Logo"
+                                alt="Marketplace Logo"
                                 height={"80"}
                                 width={"80"}
                             />

@@ -10,6 +10,11 @@
     },
     "author": "Hassane Bendaoud <40140987+hsn0x@users.noreply.github.com>",
     "license": "MIT",
+    "repository": {
+        "url": "https://github.com/hsn0x/marketplace-next-express-mongodb-frontend.git",
+        "type": "git",
+        "directory": "."
+    },
     "dependencies": {
         "@elastic/elasticsearch": "^8.2.1",
         "@fortawesome/fontawesome-svg-core": "^6.1.1",
