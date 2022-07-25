@@ -1,5 +1,5 @@
 {
-    "name": "hsn-marketplace-nextjs-frontend",
+    "name": "marketplace-next-express-mongodb-frontend",
     "version": "0.1.2",
     "private": true,
     "scripts": {
