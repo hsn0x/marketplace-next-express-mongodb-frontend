@@ -94,7 +94,7 @@ To run this project, you will need to add the following environment variables to
 
 Here are some related projects
 
--   [Marketplace Expressjs Sequelize Backend](https://github.com/hsn0x/marketplace-expressjs-sequelize-backend)
+-   [Marketplace Express Sequelize Backend](https://github.com/hsn0x/marketplace-express-sequelize-backend)
 
 ## Roadmap
 
