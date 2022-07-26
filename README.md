@@ -96,7 +96,7 @@ Here are some related projects
 
 -   [Marketplace Express Sequelize Backend](https://github.com/hsn0x/marketplace-express-sequelize-backend)
 -   [Todos Express Sequelize Backend](https://github.com/hsn0x/todos-express-sequelize-backend)
--   [Todos Express Sequelize Backend](https://github.com/hsn0x/todos-next-express-sequelize-backend)
+-   [Todos Next Express Sequelize Frontend](https://github.com/hsn0x/todos-next-express-sequelize-backend)
 
 ## Roadmap
 
