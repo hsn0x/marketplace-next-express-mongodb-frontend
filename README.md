@@ -9,7 +9,7 @@ Hi 👋, I'm Hassane Bendaoud a full-time full-stack freelance developer 👨‍
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/hsn0x)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/hsn_0x)
 
-# Marketplace Nextjs Frontend
+# Marketplace Next Express MongoDB Frontend
 
 Multiple Stores Listing
 
@@ -36,7 +36,7 @@ on progress
 Clone the project
 
 ```bash
-  git clone https://github.com/hsn0x/marketplace-nextjs-frontend.git
+  git clone https://github.com/hsn0x/marketplace-next-express-mongodb-frontend.git
 ```
 
 Go to the project directory
@@ -95,6 +95,8 @@ To run this project, you will need to add the following environment variables to
 Here are some related projects
 
 -   [Marketplace Express Sequelize Backend](https://github.com/hsn0x/marketplace-express-sequelize-backend)
+-   [Todos Express Sequelize Backend](https://github.com/hsn0x/todos-express-sequelize-backend)
+-   [Todos Express Sequelize Backend](https://github.com/hsn0x/todos-next-express-sequelize-backend)
 
 ## Roadmap
 
