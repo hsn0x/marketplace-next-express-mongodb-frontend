@@ -13,7 +13,7 @@ const StoresMyPage = ({ authUser }) => {
     useEffect(() => {
         dispatch(updateAuth(authUser));
         dispatch(updateIsAuthenticated(!!authUser));
-        // dispatch(fetchProfile());
+        dispatch(fetchProfile());
     }, []);
     return (
         <div>

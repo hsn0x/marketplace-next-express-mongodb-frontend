@@ -34,7 +34,7 @@ const AdminCategoryBoxTreeAddNew = ({ category, categoryType }) => {
             const { data } = await axiosServer.get(
                 `/categories/type/${categoryType}`
             );
-            categoriesFetchSuccess(data.categories);
+            categoriesFetchSuccess(data.rows);
         } catch (error) {
             categoriesFetchFail(getError(error));
         }

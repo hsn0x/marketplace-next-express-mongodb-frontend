@@ -12,8 +12,11 @@ async function loginRoute(req, res) {
             ...authUser,
             Markets: [],
             Products: [],
-            comments: [],
-            reviews: [],
+            Comments: [],
+            Reviews: [],
+            Likes: [],
+            Votes: [],
+            Favorites: [],
         };
         await req.session.save();
         return res.send({ ok: true, message: "Logged in" });

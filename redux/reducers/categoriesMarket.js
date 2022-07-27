@@ -64,7 +64,7 @@ export const fetchCategoriesMarket = () => {
         categoriesMarketFetchRequest();
         try {
             const { data } = await axiosServer.get("/categories/type/market");
-            categoriesMarketFetchSuccess(data.categories);
+            categoriesMarketFetchSuccess(data.rows);
         } catch (error) {
             categoriesMarketFetchFail(getError(error));
         }

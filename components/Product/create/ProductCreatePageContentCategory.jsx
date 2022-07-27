@@ -192,7 +192,7 @@ const ProductCreatePageContentCategory = () => {
                 const { data } = await axiosServer.get(
                     "/categories/type/product"
                 );
-                categoriesFetchSuccess(data.categories);
+                categoriesFetchSuccess(data.rows);
             } catch (error) {
                 categoriesFetchFail(getError(error));
             }

@@ -209,7 +209,7 @@ const StoreEditPageContentCategory = () => {
                 const { data } = await axiosServer.get(
                     "/categories/type/market"
                 );
-                categoriesFetchSuccess(data.categories);
+                categoriesFetchSuccess(data.rows);
 
                 console.log(edit.CategoriesIds[0]);
                 setCategorySelected(edit.CategoriesIds[0] || 0);

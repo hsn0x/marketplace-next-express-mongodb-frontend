@@ -205,7 +205,7 @@ const ProductEditPageContentCategory = () => {
                 const { data } = await axiosServer.get(
                     "/categories/type/product"
                 );
-                categoriesFetchSuccess(data.categories);
+                categoriesFetchSuccess(data.rows);
 
                 setCategorySelected(edit.CategoriesIds[0] || 0);
                 setCategoryRootSubSelected(edit.CategoriesIds[1] || 0);
