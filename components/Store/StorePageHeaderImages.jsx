@@ -14,7 +14,7 @@ const StorePageHeaderImages = ({ Images }) => {
                     objectFit="cover"
                     src={
                         Images[marketImageSelected].url ||
-                        ImagesConfig.defaultCovers
+                        imagesConfig.defaultCovers
                     }
                     alt={Images[marketImageSelected].public_id}
                     width={600}

@@ -56,6 +56,7 @@ const MarketPage = ({ params }) => {
             {market && (
                 <div className="grid grid-cols-1 gap-1">
                     <div>
+                        {console.log(market)}
                         <StorePageHeader
                             Images={market.Images}
                             Avatars={market.Avatars}

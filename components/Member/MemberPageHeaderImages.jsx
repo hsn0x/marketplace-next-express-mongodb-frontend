@@ -14,11 +14,11 @@ const MemberPageHeaderImages = ({ Images }) => {
                     objectFit="cover"
                     src={
                         Images[marketImageSelected]?.url ||
-                        ImagesConfig.defaultCovers[marketImageSelected].url
+                        imagesConfig.defaultCovers[marketImageSelected].url
                     }
                     alt={
                         Images[marketImageSelected]?.public_id ||
-                        ImagesConfig.defaultCovers[marketImageSelected]
+                        imagesConfig.defaultCovers[marketImageSelected]
                             .public_id
                     }
                     width={600}

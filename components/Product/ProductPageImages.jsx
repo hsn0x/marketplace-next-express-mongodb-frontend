@@ -13,7 +13,7 @@ const ProductPageImages = ({ Images }) => {
                     objectFit="cover"
                     src={
                         Images[productImageSelected].url ||
-                        ImagesConfig.defaultCovers
+                        imagesConfig.defaultCovers
                     }
                     alt={Images[productImageSelected].public_id}
                     width={600}
