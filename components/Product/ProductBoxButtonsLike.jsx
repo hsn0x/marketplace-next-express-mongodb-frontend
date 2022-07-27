@@ -30,7 +30,7 @@ const ProductBoxButtonsLike = ({ product }) => {
 
     useEffect(() => {
         const isProductLiked = () => {
-            return product.likes.find((like) => like.UserId === user?.id);
+            return product.Likes.find((like) => like.UserId === user?.id);
         };
 
         if (isProductLiked()) {
@@ -38,7 +38,7 @@ const ProductBoxButtonsLike = ({ product }) => {
         } else {
             setLike(0);
         }
-    }, [product.likes, setLike, user?.id]);
+    }, [product.Likes, setLike, user?.id]);
 
     return (
         <div>
@@ -57,7 +57,7 @@ const ProductBoxButtonsLike = ({ product }) => {
                 </div>
             </Button>
             <div className="text-center text-xl font-bold">
-                {like ? product.likes.length + 1 : product.likes?.length}
+                {like ? product.Likes.length + 1 : product.Likes?.length}
             </div>
         </div>
     );

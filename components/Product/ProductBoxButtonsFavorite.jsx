@@ -32,7 +32,7 @@ const ProductBoxButtonsFavorite = ({ product }) => {
 
     useEffect(() => {
         const isProductFavorited = () => {
-            return product.favorites.find(
+            return product.Favorites.find(
                 (favorite) => favorite.UserId === user?.id
             );
         };
@@ -42,7 +42,7 @@ const ProductBoxButtonsFavorite = ({ product }) => {
         } else {
             setFavorite(0);
         }
-    }, [product.favorites, setFavorite, user?.id]);
+    }, [product.Favorites, setFavorite, user?.id]);
 
     return (
         <div>
@@ -63,8 +63,8 @@ const ProductBoxButtonsFavorite = ({ product }) => {
             <div className="text-center text-xl font-bold">
                 {" "}
                 {favorite
-                    ? product.favorites.length + 1
-                    : product.favorites.length}
+                    ? product.Favorites.length + 1
+                    : product.Favorites.length}
             </div>
         </div>
     );

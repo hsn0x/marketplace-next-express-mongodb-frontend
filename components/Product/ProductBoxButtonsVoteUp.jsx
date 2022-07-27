@@ -30,7 +30,7 @@ const ProductBoxButtonsVote = ({ product }) => {
 
     useEffect(() => {
         const isProductVoted = () => {
-            return product.votes.find((vote) => vote.UserId === user?.id);
+            return product.Votes.find((vote) => vote.UserId === user?.id);
         };
 
         if (isProductVoted()) {
@@ -38,7 +38,7 @@ const ProductBoxButtonsVote = ({ product }) => {
         } else {
             setVote(0);
         }
-    }, [product.votes, setVote, user?.id]);
+    }, [product.Votes, setVote, user?.id]);
 
     return (
         <div>
@@ -57,7 +57,7 @@ const ProductBoxButtonsVote = ({ product }) => {
                 </div>
             </Button>
             <div className="text-center text-xl font-bold">
-                {vote ? product.votes.length + 1 : product.votes?.length}
+                {vote ? product.Votes.length + 1 : product.Votes?.length}
             </div>
         </div>
     );
