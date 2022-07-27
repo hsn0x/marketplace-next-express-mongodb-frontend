@@ -71,8 +71,8 @@ const ProductPage = ({ authUser, params }) => {
                             <div>
                                 <ProductPageTabs
                                     user={product.User}
-                                    reviews={product.reviews}
-                                    comments={product.comments}
+                                    reviews={product.Reviews}
+                                    comments={product.Comments}
                                     about={product.about}
                                 />
                             </div>

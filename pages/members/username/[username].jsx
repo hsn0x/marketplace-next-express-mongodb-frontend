@@ -77,8 +77,8 @@ const MemberUsernamePage = ({ params, authUser }) => {
                             products={member.Products}
                             markets={member.Markets}
                             about={member.about}
-                            comments={member.comments}
-                            reviews={member.reviews}
+                            comments={member.Comments}
+                            reviews={member.Reviews}
                         />
                     </div>
                 </div>
