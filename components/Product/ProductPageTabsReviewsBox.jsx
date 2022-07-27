@@ -7,7 +7,7 @@ const ProductPageTabsReviewsBox = ({ reviews }) => {
             {reviews &&
                 reviews.map((review, index) => {
                     return (
-                        <div key={index}>
+                        <div key={review._id}>
                             <ProductPageTabsReviewBox review={review} />
                         </div>
                     );

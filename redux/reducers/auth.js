@@ -88,10 +88,10 @@ const reducer = (state = initialState, action) => {
 export const fetchProfile = () => {
     return async (dispatch, getState) => {
         if (
-            getState.auth &&
-            getState.auth.user &&
-            getState.auth.isAuthenticated &&
-            !getState.auth.profile
+            getState().auth &&
+            getState().auth.user &&
+            getState().auth.isAuthenticated &&
+            !getState().auth.profile
         ) {
             try {
                 const { data: fetchedProfile } = await axiosServer.get(

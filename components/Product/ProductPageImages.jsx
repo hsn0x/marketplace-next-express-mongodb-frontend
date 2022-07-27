@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { imagesConfig } from "../../config/images";
 
-const ProductPageImages = ({ images }) => {
+const ProductPageImages = ({ Images }) => {
     const [productImageSelected, selectProductImage] = useState(0);
 
     return (
@@ -12,19 +12,19 @@ const ProductPageImages = ({ images }) => {
                     layout="responsive"
                     objectFit="cover"
                     src={
-                        images[productImageSelected].url ||
-                        imagesConfig.defaultCovers
+                        Images[productImageSelected].url ||
+                        ImagesConfig.defaultCovers
                     }
-                    alt={images[productImageSelected].public_id}
+                    alt={Images[productImageSelected].public_id}
                     width={600}
                     height={400}
                 />
             </div>
             <div className="grid grid-cols-5 gap-2">
-                {images.map((image, imageIndex) => (
+                {Images.map((image, imageIndex) => (
                     <div
                         className="w-28 h-28 hover:scale-105 transition duration-300 cursor-pointer border-4 rounded-3xl overflow-hidden"
-                        key={image.id}
+                        key={image._id}
                         onMouseOver={() => selectProductImage(imageIndex)}
                     >
                         <Image

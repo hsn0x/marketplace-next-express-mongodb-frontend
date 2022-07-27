@@ -25,7 +25,6 @@ const ProductPageTabsReviewsInsert = () => {
 
     const handleReviewSave = (e) => {
         e.preventDefault();
-        console.log({ title, content });
         try {
             const review = axiosServer.post("/reviews", {
                 rate,

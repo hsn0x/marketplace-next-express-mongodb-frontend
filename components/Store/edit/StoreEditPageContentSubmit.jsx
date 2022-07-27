@@ -21,7 +21,6 @@ const StoreEditPageContentSubmit = () => {
                     (p) => !isNaN(p)
                 ),
             };
-            console.log(marketEditData);
             await axiosServer.put(`/markets/${market.id}`, marketEditData);
         } catch (error) {
             getError(error);

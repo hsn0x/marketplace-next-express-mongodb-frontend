@@ -30,7 +30,6 @@ const ProductCreatePageContentSubmit = () => {
                     (p) => !isNaN(p)
                 ),
             };
-            console.log(productCreateData);
             await axiosServer.post("/products", productCreateData);
         } catch (error) {
             getError(error);

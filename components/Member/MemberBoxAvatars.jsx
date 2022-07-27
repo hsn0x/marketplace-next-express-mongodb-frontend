@@ -1,12 +1,12 @@
 import { Avatar, Carousel } from "flowbite-react";
 import React from "react";
 
-const MemberBoxAvatars = ({ avatars }) => {
+const MemberBoxAvatars = ({ Avatars }) => {
     return (
         <div className="">
-            {avatars && (
+            {Avatars && (
                 <Avatar
-                    img={avatars[0]?.url}
+                    img={Avatars[0]?.url}
                     rounded={true}
                     bordered={true}
                     size="lg"

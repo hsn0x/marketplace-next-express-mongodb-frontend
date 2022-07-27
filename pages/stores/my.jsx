@@ -15,6 +15,7 @@ const StoresMyPage = ({ authUser }) => {
         dispatch(updateIsAuthenticated(!!authUser));
         dispatch(fetchProfile());
     }, []);
+
     return (
         <div>
             <StoresMyPageTitle title="My Stores" />

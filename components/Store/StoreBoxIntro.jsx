@@ -2,14 +2,14 @@ import { Avatar } from "flowbite-react";
 import Link from "next/link";
 import React from "react";
 
-const StoreBoxIntro = ({ avatars, name, username, slug }) => {
+const StoreBoxIntro = ({ Avatars, name, username, slug }) => {
     return (
         <>
-            {avatars && (
+            {Avatars && (
                 <div className="bg-gray-100 rounded-xl p-2">
                     <h2 className="">
                         <Avatar
-                            img={avatars[0]?.url}
+                            img={Avatars[0]?.url}
                             rounded={true}
                             bordered={true}
                             size="lg"

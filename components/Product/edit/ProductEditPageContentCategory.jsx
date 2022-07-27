@@ -16,8 +16,6 @@ const ProductEditPageContentCategory = () => {
     const [categorySubSelected, setCategoryRootSubSelected] = useState(0);
     const [categorySubSubSelected, setCategoryRootSubSubSelected] = useState(0);
 
-    console.log(categorySelected, categorySubSelected, categorySubSubSelected);
-
     const {
         categoriesFetchFail,
         categoriesFetchRequest,

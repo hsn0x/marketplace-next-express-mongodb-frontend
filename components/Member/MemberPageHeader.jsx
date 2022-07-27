@@ -8,16 +8,16 @@ import MemberPageHeaderOwner from "./MemberPageHeaderOwner";
 const MemberPageHeader = ({
     firstName,
     lastName,
-    images,
-    avatars,
+    Images,
+    Avatars,
     username,
 }) => {
     return (
         <div>
             <Card>
-                <MemberPageHeaderImages images={images} />
+                <MemberPageHeaderImages Images={Images} />
                 <MemberPageHeaderAvatar
-                    avatars={avatars}
+                    Avatars={Avatars}
                     firstName={firstName}
                     lastName={lastName}
                     username={username}

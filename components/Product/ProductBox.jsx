@@ -22,10 +22,10 @@ const ProductBox = ({ product, authUser }) => {
                         slug={product.slug}
                         title={product.title}
                     />
-                    <ProductBoxImages images={product.images} />
+                    <ProductBoxImages Images={product.Images} />
                     {product.Market && (
                         <StoreBoxIntro
-                            avatars={product.Market.avatars}
+                            Avatars={product.Market.Avatars}
                             name={product.Market.name}
                             username={product.Market.username}
                             slug={product.Market.slug}

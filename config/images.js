@@ -1,7 +1,7 @@
 export const imagesConfig = {
     defaultAvatar: [
         {
-            public_id: "default avatars",
+            public_id: "default Avatars",
             url: "/default-avatar.jpg",
         },
     ],

@@ -7,7 +7,7 @@ const ProductPageTabsCommentsBox = ({ comments }) => {
             {comments &&
                 comments.map((comment, index) => {
                     return (
-                        <div key={index}>
+                        <div key={comment_id}>
                             <ProductPageTabsCommentBox comment={comment} />
                         </div>
                     );

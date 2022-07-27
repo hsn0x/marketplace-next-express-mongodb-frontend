@@ -15,7 +15,6 @@ const ProductPageTabsCommentsInsert = () => {
 
     const handleCommentSave = (e) => {
         e.preventDefault();
-        console.log({ title, content });
         try {
             const comment = axiosServer.post("/comments", {
                 title,

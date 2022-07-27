@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
         case MARKET_CREATE_UPDATE_MEDIA:
             return {
                 ...state,
-                create: { ...state.create, images: action.payload },
+                create: { ...state.create, Images: action.payload },
             };
         case MARKET_CREATE_UPDATE_ABOUT:
             return {

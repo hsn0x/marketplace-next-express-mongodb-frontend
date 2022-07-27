@@ -45,7 +45,7 @@ const reducer = (state = initialState, action) => {
         case PRODUCT_CREATE_UPDATE_MEDIA:
             return {
                 ...state,
-                create: { ...state.create, images: action.payload },
+                create: { ...state.create, Images: action.payload },
             };
         default:
             return state;

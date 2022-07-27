@@ -32,7 +32,6 @@ export const signIn = () => async (dispatch, getState) => {
         password,
     };
     try {
-        console.log({ loginData });
         const { data: signInData } = await axiosServer.post(
             "/auth/login",
             loginData

@@ -23,9 +23,7 @@ const LoginScreen = () => {
     const handleSignIn = async (event) => {
         event.preventDefault();
         const signInData = await dispatch(signIn());
-        console.log(signInData);
         if (signInData.isAuthenticated) {
-            console.log(auth.isAuthenticated);
             const authUser = await dispatch(fetchProfile());
             authUser;
             router.push("/");

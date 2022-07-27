@@ -5,7 +5,7 @@ const StoresBox = ({ markets }) => {
     return (
         <div className="grid grid-cols-3 gap-2">
             {markets.map((market) => (
-                <div key={market.id} className="">
+                <div key={market._id} className="">
                     <StoreBox market={market} />
                 </div>
             ))}

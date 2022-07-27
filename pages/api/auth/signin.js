@@ -10,10 +10,16 @@ async function loginRoute(req, res) {
     if (authUser) {
         req.session.user = {
             ...authUser,
+
+            Avatars: [],
+            Images: [],
+
             Markets: [],
             Products: [],
+
             Comments: [],
             Reviews: [],
+
             Likes: [],
             Votes: [],
             Favorites: [],

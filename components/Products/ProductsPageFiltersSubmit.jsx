@@ -32,8 +32,7 @@ const ProductsPageFiltersSubmit = () => {
                     params: { ...filtersData },
                 }
             );
-            console.log(data.products);
-            productsFiltersUpdateProducts(data.products);
+            productsFiltersUpdateProducts(data.rows);
             // await axiosServer.get(`/products/q/filters/${query}?x=s`, {
             //     params: { answer: 42 },
             // });

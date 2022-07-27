@@ -29,7 +29,6 @@ const ProductEditPageContentSubmit = () => {
                     (p) => !isNaN(p)
                 ),
             };
-            console.log(productEditData);
             await axiosServer.put(`/products/${product.id}`, productEditData);
         } catch (error) {
             getError(error);

@@ -30,9 +30,8 @@ const ProductsPageTitleSearch = () => {
                 .join(" ");
             if (!validQuery) return;
 
-            console.log({ validQuery });
             const { data } = await axiosServer.get(`/products/q/${validQuery}`);
-            productsSearchFetchSuccess(data.products);
+            productsSearchFetchSuccess(data.rows);
         } catch (error) {
             productsSearchFetchFail(getError(error));
         }

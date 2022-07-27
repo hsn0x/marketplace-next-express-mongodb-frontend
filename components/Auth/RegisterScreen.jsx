@@ -37,7 +37,6 @@ const RegisterScreen = () => {
     const handleSignUp = async (event) => {
         event.preventDefault();
         await dispatch(signUp());
-        console.log({ register });
         updateLoginEmail(register.email);
         updateLoginPassword(register.password);
         handleSignIn(event);
@@ -46,9 +45,7 @@ const RegisterScreen = () => {
     const handleSignIn = async (event) => {
         event.preventDefault();
         const signInData = await dispatch(signIn());
-        console.log(signInData);
         if (signInData.isAuthenticated) {
-            console.log(auth.isAuthenticated);
             const authUser = await dispatch(fetchProfile());
             authUser;
             router.push("/");

@@ -59,7 +59,6 @@ export const signUp = () => async (dispatch, getState) => {
         passwordConfirmed,
     };
     try {
-        console.log({ registerData });
         const response = await axiosServer.post("/auth/register", registerData);
         Notify.success("Sign Up Successful", {
             position: "right-top",

@@ -31,7 +31,6 @@ const ProductPage = ({ authUser, params }) => {
     useEffect(() => {
         dispatch(updateAuth(authUser));
         dispatch(updateIsAuthenticated(!!authUser));
-        console.log({ authUser });
 
         const fetchProduct = async () => {
             productFetchRequest();
@@ -39,7 +38,7 @@ const ProductPage = ({ authUser, params }) => {
                 const { data } = await axiosServer.get(
                     `/products/title/${slug}`
                 );
-                productFetchSuccess(data.product);
+                productFetchSuccess(data);
             } catch (error) {
                 productFetchFail(getError(error));
                 console.log(error);
@@ -56,7 +55,7 @@ const ProductPage = ({ authUser, params }) => {
                     <div>
                         <Card>
                             <div className="grid grid-cols-2 gap-2">
-                                <ProductPageImages images={product.images} />
+                                <ProductPageImages Images={product.Images} />
                                 <ProductPageDetails
                                     title={product.title}
                                     price={product.price}

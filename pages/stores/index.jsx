@@ -32,7 +32,7 @@ const Markets = ({ authUser }) => {
             marketsFetchRequest();
             try {
                 const { data } = await axiosServer.get("/markets");
-                marketsFetchSuccess(data.markets);
+                marketsFetchSuccess(data.rows);
             } catch (error) {
                 marketsFetchFail(getError(error));
             }

@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { imagesConfig } from "../../config/images";
 
-const MemberPageHeaderImages = ({ images }) => {
+const MemberPageHeaderImages = ({ Images }) => {
     const [marketImageSelected, selectMarketImage] = useState(0);
 
     return (
@@ -13,12 +13,12 @@ const MemberPageHeaderImages = ({ images }) => {
                     layout="responsive"
                     objectFit="cover"
                     src={
-                        images[marketImageSelected]?.url ||
-                        imagesConfig.defaultCovers[marketImageSelected].url
+                        Images[marketImageSelected]?.url ||
+                        ImagesConfig.defaultCovers[marketImageSelected].url
                     }
                     alt={
-                        images[marketImageSelected]?.public_id ||
-                        imagesConfig.defaultCovers[marketImageSelected]
+                        Images[marketImageSelected]?.public_id ||
+                        ImagesConfig.defaultCovers[marketImageSelected]
                             .public_id
                     }
                     width={600}
@@ -26,10 +26,10 @@ const MemberPageHeaderImages = ({ images }) => {
                 />
             </div>
             <div className="grid grid-cols-5 gap-2">
-                {images.map((image, imageIndex) => (
+                {Images.map((image, imageIndex) => (
                     <div
                         className="w-16 h-16 hover:scale-105 transition duration-300 cursor-pointer border-4 rounded-3xl overflow-hidden"
-                        key={image.id}
+                        key={image._id}
                         onMouseOver={() => selectMarketImage(imageIndex)}
                     >
                         <Image

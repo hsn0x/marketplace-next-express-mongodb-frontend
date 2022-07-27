@@ -5,7 +5,7 @@ const ProductsBox = ({ products }) => {
     return (
         <div className="grid grid-cols-3 gap-3">
             {products.map((product) => (
-                <div key={product.id} className="">
+                <div key={product._id} className="">
                     <ProductBox product={product} />
                 </div>
             ))}

@@ -13,8 +13,6 @@ const ProductsPagination = ({ totalItems, totalPages, currentPage }) => {
         bindActionCreators(productsActions, dispatch);
 
     const onPageChange = (selectedPage) => {
-        console.log("onPageChange", selectedPage);
-
         const fetchProducts = async () => {
             productsFetchRequest();
             try {

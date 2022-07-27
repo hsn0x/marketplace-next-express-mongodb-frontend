@@ -45,7 +45,7 @@ const reducer = (state = initialState, action) => {
         case PRODUCT_EDIT_UPDATE_MEDIA:
             return {
                 ...state,
-                edit: { ...state.edit, images: action.payload },
+                edit: { ...state.edit, Images: action.payload },
             };
         default:
             return state;

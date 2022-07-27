@@ -21,7 +21,7 @@ const ProductPageDetails = ({ title, price, description, store }) => {
                     name={store.name}
                     username={store.username}
                     slug={store.slug}
-                    avatars={store.avatars}
+                    Avatars={store.Avatars}
                 />
             </div>
         </>

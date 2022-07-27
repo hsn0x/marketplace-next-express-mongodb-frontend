@@ -9,7 +9,7 @@ const ProductPageTabsBy = ({ user }) => {
                 <div className="bg-gray-100 flex gap-3 items-center p-2 rounded-lg">
                     <div>
                         <Avatar
-                            img={user?.avatars[0].url}
+                            img={user?.Avatars[0].url}
                             rounded={true}
                             bordered={true}
                             size="lg"

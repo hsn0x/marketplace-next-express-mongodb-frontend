@@ -149,7 +149,6 @@ const CategoriesBox3 = ({ categories }) => {
         };
 
         handleCategoriesBoxOrganized(categories);
-        console.log({ categoriesLevels });
         setCategoriesBoxOrganized(categoriesLevels);
     }, [categories]);
 

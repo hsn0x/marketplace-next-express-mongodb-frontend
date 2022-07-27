@@ -15,25 +15,25 @@ const MediasPageTabs = ({ authUser }) => {
                             <div className="grid grid-cols-4 gap-2">
                                 <MediasBox
                                     title="Profile Covers"
-                                    medias={profile.images || []}
+                                    medias={profile.Images || []}
                                 />
                                 <MediasBox
                                     title="Profile Avatars"
-                                    medias={profile.avatars || []}
+                                    medias={profile.Avatars || []}
                                 />
                                 <MediasBox
                                     title="Markets Covers"
-                                    mediasName="images"
+                                    mediasName="Images"
                                     medias={profile.Markets || []}
                                 />
                                 <MediasBox
                                     title="Markets Avatars"
-                                    mediasName="avatars"
+                                    mediasName="Avatars"
                                     medias={profile.Markets || []}
                                 />
                                 <MediasBox
                                     title="Products Images"
-                                    mediasName="images"
+                                    mediasName="Images"
                                     medias={profile.Products || []}
                                 />
                             </div>
@@ -42,16 +42,16 @@ const MediasPageTabs = ({ authUser }) => {
                             <div className="grid grid-cols-4 gap-2">
                                 <MediasBox
                                     title="Profile Covers"
-                                    medias={profile.images || []}
+                                    medias={profile.Images || []}
                                 />
                                 <MediasBox
                                     title="Markets Covers"
-                                    mediasName="images"
+                                    mediasName="Images"
                                     medias={profile.Markets || []}
                                 />
                                 <MediasBox
                                     title="Products Images"
-                                    mediasName="images"
+                                    mediasName="Images"
                                     medias={profile.Products || []}
                                 />
                             </div>
@@ -61,11 +61,11 @@ const MediasPageTabs = ({ authUser }) => {
                             <div className="grid grid-cols-4 gap-2">
                                 <MediasBox
                                     title="Profile Avatars"
-                                    medias={profile.avatars || []}
+                                    medias={profile.Avatars || []}
                                 />
                                 <MediasBox
                                     title="Markets Avatars"
-                                    mediasName="avatars"
+                                    mediasName="Avatars"
                                     medias={profile.Markets || []}
                                 />
                             </div>

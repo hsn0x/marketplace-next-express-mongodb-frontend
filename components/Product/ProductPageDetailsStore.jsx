@@ -2,14 +2,14 @@ import { Avatar } from "flowbite-react";
 import Link from "next/link";
 import React from "react";
 
-const ProductPageDetailsStore = ({ avatars, name, username, slug }) => {
+const ProductPageDetailsStore = ({ Avatars, name, username, slug }) => {
     return (
         <div>
-            {avatars && (
+            {Avatars && (
                 <div className=" rounded-xl p-2">
                     <h2 className="">
                         <Avatar
-                            img={avatars[0].url}
+                            img={Avatars[0].url}
                             rounded={true}
                             bordered={true}
                             size="lg"

@@ -9,7 +9,7 @@ const ProductBoxIntro = ({ store }) => {
                 <div className="bg-gray-100 rounded-xl p-2">
                     <h2 className="">
                         <Avatar
-                            img={store.avatars[0].url}
+                            img={store.Avatars[0].url}
                             rounded={true}
                             bordered={true}
                             size="lg"

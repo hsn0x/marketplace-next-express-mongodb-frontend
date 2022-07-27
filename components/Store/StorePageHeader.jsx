@@ -5,13 +5,13 @@ import StorePageHeaderAvatar from "./StorePageHeaderAvatar";
 import StorePageHeaderImages from "./StorePageHeaderImages";
 import StorePageHeaderOwner from "./StorePageHeaderOwner";
 
-const StorePageHeader = ({ images, avatars, name, username, user }) => {
+const StorePageHeader = ({ Images, Avatars, name, username, user }) => {
     return (
         <div>
             <Card>
-                <StorePageHeaderImages images={images} />
+                <StorePageHeaderImages Images={Images} />
                 <StorePageHeaderAvatar
-                    avatars={avatars}
+                    Avatars={Avatars}
                     name={name}
                     username={username}
                 />

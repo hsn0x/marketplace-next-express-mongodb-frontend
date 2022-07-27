@@ -33,7 +33,7 @@ const EditMarketPage = ({ authUser, params }) => {
             marketFetchRequest();
             try {
                 const { data } = await axiosServer.get(`/markets/name/${slug}`);
-                marketFetchSuccess(data.market);
+                marketFetchSuccess(data);
 
                 marketEditUpdateName(data.market.name);
                 marketEditUpdateUsername(data.market.username);

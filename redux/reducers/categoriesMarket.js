@@ -54,7 +54,6 @@ const reducer = (state = initialState, action) => {
 
 export const fetchCategoriesMarket = () => {
     return async (dispatch, getState) => {
-        console.log("fetchCategoriesMarket");
         const {
             categoriesMarketFetchFail,
             categoriesMarketFetchRequest,

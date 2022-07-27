@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { imagesConfig } from "../../config/images";
 
-const StorePageHeaderImages = ({ images }) => {
+const StorePageHeaderImages = ({ Images }) => {
     const [marketImageSelected, selectMarketImage] = useState(0);
 
     return (
@@ -13,19 +13,19 @@ const StorePageHeaderImages = ({ images }) => {
                     layout="responsive"
                     objectFit="cover"
                     src={
-                        images[marketImageSelected].url ||
-                        imagesConfig.defaultCovers
+                        Images[marketImageSelected].url ||
+                        ImagesConfig.defaultCovers
                     }
-                    alt={images[marketImageSelected].public_id}
+                    alt={Images[marketImageSelected].public_id}
                     width={600}
                     height={200}
                 />
             </div>
             <div className="flex flex-row gap-1">
-                {images.map((image, imageIndex) => (
+                {Images.map((image, imageIndex) => (
                     <div
                         className="w-16 h-16 hover:scale-105 transition duration-300 cursor-pointer border-4 rounded-3xl overflow-hidden"
-                        key={image.id}
+                        key={image._id}
                         onMouseOver={() => selectMarketImage(imageIndex)}
                     >
                         <Image

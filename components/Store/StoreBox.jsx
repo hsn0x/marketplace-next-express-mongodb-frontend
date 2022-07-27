@@ -21,9 +21,9 @@ const StoreBox = ({ market }) => {
                         title={market.title}
                         slug={market.slug}
                     />
-                    <StoreBoxImages images={market.images} />
+                    <StoreBoxImages Images={market.Images} />
                     <StoreBoxIntro
-                        avatars={market.avatars}
+                        Avatars={market.Avatars}
                         name={market.name}
                         username={market.username}
                         slug={market.slug}

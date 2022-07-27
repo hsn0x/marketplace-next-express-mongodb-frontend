@@ -1,13 +1,13 @@
 import { Carousel } from "flowbite-react";
 import React from "react";
 
-const ProductBoxImages = ({ images }) => {
+const ProductBoxImages = ({ Images }) => {
     return (
         <div className="h-56">
-            {images && (
+            {Images && (
                 <Carousel className="h-screen">
-                    {images.map((image) => (
-                        <img src={image.url} alt="" key={image.public_id} />
+                    {Images.map((image) => (
+                        <img src={image.url} alt="" key={image._id} />
                     ))}
                 </Carousel>
             )}

@@ -12,9 +12,9 @@ const MemberBox = ({ member }) => {
         <div className="hover:scale-105 transition duration-300">
             <Card style={{ height: "100%" }}>
                 <div className="h-full flex flex-col gap-3">
-                    <MemberBoxImages images={member.images} />
+                    <MemberBoxImages Images={member.Images} />
                     <div className="flex flex-row gap-2">
-                        <MemberBoxAvatars avatars={member.avatars} />
+                        <MemberBoxAvatars Avatars={member.Avatars} />
                         <div>
                             <MemberBoxTitle
                                 firstName={member.firstName}

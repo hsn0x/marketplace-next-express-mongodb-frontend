@@ -34,7 +34,7 @@ const MarketPage = ({ params }) => {
             marketFetchRequest();
             try {
                 const { data } = await axiosServer.get(`/markets/name/${slug}`);
-                marketFetchSuccess(data.market);
+                marketFetchSuccess(data);
             } catch (error) {
                 marketFetchFail(getError(error));
                 console.log(error);
@@ -57,8 +57,8 @@ const MarketPage = ({ params }) => {
                 <div className="grid grid-cols-1 gap-1">
                     <div>
                         <StorePageHeader
-                            images={market.images}
-                            avatars={market.avatars}
+                            Images={market.Images}
+                            Avatars={market.Avatars}
                             name={market.name}
                             username={market.username}
                             user={market.User}

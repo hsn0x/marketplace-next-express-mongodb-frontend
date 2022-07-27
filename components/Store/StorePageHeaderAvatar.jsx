@@ -1,13 +1,13 @@
 import { Avatar } from "flowbite-react";
 import React from "react";
 
-const StorePageHeaderAvatar = ({ avatars, name, username }) => {
+const StorePageHeaderAvatar = ({ Avatars, name, username }) => {
     return (
         <div className="flex flex-row justify-center -mt-44">
             <div className="grid place-items-center">
                 <div className=" bg-white rounded-full z-10 text-center hover:scale-105 transition duration-300">
                     <Avatar
-                        img={avatars[0].url}
+                        img={Avatars[0].url}
                         rounded={true}
                         bordered={true}
                         size="xl"

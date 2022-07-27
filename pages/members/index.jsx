@@ -28,8 +28,7 @@ const Members = ({ authUser }) => {
             membersFetchRequest();
             try {
                 const { data } = await axiosServer.get("/users");
-                console.log(data);
-                membersFetchSuccess(data.users);
+                membersFetchSuccess(data.rows);
             } catch (error) {
                 membersFetchFail(getError(error));
             }

@@ -20,7 +20,6 @@ const StoreCreatePageContentSubmit = () => {
                     (p) => !isNaN(p)
                 ),
             };
-            console.log(marketCreateData);
             await axiosServer.post("/markets", marketCreateData);
         } catch (error) {
             getError(error);

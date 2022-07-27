@@ -36,7 +36,7 @@ const EditProductPage = ({ authUser, params }) => {
                 const { data } = await axiosServer.get(
                     `/products/title/${slug}`
                 );
-                productFetchSuccess(data.product);
+                productFetchSuccess(data);
                 productEditUpdateCategory(
                     data.product.categories.map((c) => c.id)
                 );

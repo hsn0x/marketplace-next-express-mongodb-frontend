@@ -37,7 +37,7 @@ const MemberUsernamePage = ({ params, authUser }) => {
                 const { data } = await axiosServer.get(
                     `/users/username/${username}`
                 );
-                memberFetchSuccess(data.user);
+                memberFetchSuccess(data);
             } catch (error) {
                 memberFetchFail(getError(error));
                 console.log(error);
@@ -60,8 +60,8 @@ const MemberUsernamePage = ({ params, authUser }) => {
                 <div className="grid grid-cols-1 gap-1">
                     <div>
                         <MemberPageHeader
-                            images={member.images}
-                            avatars={member.avatars}
+                            Images={member.Images}
+                            Avatars={member.Avatars}
                             firstName={member.firstName}
                             lastName={member.lastName}
                             username={member.username}
