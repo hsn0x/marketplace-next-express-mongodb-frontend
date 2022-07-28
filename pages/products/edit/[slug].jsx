@@ -44,7 +44,7 @@ const EditProductPage = ({ authUser, params }) => {
                 productEditUpdateMedia();
                 productEditUpdatePrice(data.product.price);
                 productEditUpdateQuantity(data.product.quantity);
-                productEditUpdateStore(data.product.MarketId);
+                productEditUpdateStore(data.product.Market);
                 productEditUpdateTitle(data.product.title);
             } catch (error) {
                 productFetchFail(getError(error));

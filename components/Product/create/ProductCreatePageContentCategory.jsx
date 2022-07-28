@@ -10,13 +10,26 @@ import {
 import { getError } from "../../../utils/error";
 
 const ProductCreatePageContentCategory = () => {
+    /**
+     * @type {ReduxDispatch}
+     */
     const dispatch = useDispatch();
-    const [categorySelected, setCategorySelected] = useState(0);
-    const [categorySubSelected, setCategoryRootSubSelected] = useState(0);
-    const [categorySubSubSelected, setCategoryRootSubSubSelected] = useState(0);
+    /**
+     * Categories States
+     */
+    const [categorySelected, setCategorySelected] = useState("0");
+    const [categorySubSelected, setCategoryRootSubSelected] = useState("0");
+    const [categorySubSubSelected, setCategoryRootSubSubSelected] =
+        useState("0");
 
+    /**
+     * Categories Fetched
+     */
     const { categories, loading } = useSelector(({ categories }) => categories);
 
+    /**
+     * Categories Actions
+     */
     const {
         categoriesFetchFail,
         categoriesFetchRequest,
@@ -27,59 +40,73 @@ const ProductCreatePageContentCategory = () => {
         dispatch
     );
 
+    /**
+     * Handle Category Selected
+     */
     const handleCategorySelected = (value) => {
         setCategorySelected(value);
 
-        const subCategory = handleCategoriesRootSub(value)[0]?.id;
+        const subCategory = handleCategoriesRootSub(value)[0]?._id;
         setCategoryRootSubSelected(subCategory);
 
-        const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
+        const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?._id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        productCreateUpdateCategory([
-            parseInt(value),
-            parseInt(subCategory),
-            parseInt(subSubCategory),
-        ]);
+        productCreateUpdateCategory([value, subCategory, subSubCategory]);
     };
+    /**
+     * Handle Category Selected Root Sub
+     */
     const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
 
-        const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
+        const subSubCategory = handleCategoriesRootSubSub(value)[0]?._id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        productCreateUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(value),
-            parseInt(subSubCategory),
-        ]);
+        productCreateUpdateCategory([categorySelected, value, subSubCategory]);
     };
+    /**
+     * Handle Category Selected Root Sub Sub
+     */
     const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         productCreateUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(categorySubSelected),
-            parseInt(value),
+            categorySelected,
+            categorySubSelected,
+            value,
         ]);
     };
+
+    /**
+     * Handle Categories Root
+     */
     const handleCategoriesRoot = (categories) => {
-        return categories.filter((category) => category.parentId === 0);
+        return categories.filter((category) => category.parentId === "0");
     };
+    /**
+     * Handle Categories Root Sub
+     */
     const handleCategoriesRootSub = (parentId) => {
-        parentId = parseInt(parentId);
-        return parentId != 0
-            ? categories.filter((category) => category.parentId === parentId)
+        return parentId != "0"
+            ? categories.filter((category) => {
+                  return category.parentId === parentId;
+              })
             : [];
     };
+    /**
+     * Handle Categories Root Sub Sub
+     */
     const handleCategoriesRootSubSub = (parentId) => {
-        parentId = parseInt(parentId);
-        return parentId != 0
+        return parentId != "0"
             ? categories.filter((category) => category.parentId === parentId)
             : [];
     };
 
+    // Handle Categories Root
     const categoriesRoot = handleCategoriesRoot(categories);
+    // Handle Categories Root Sub
     const categoriesRootSub = handleCategoriesRootSub(categorySelected);
+    // Handle Categories Root Sub Sub
     const categoriesRootSubSub =
         handleCategoriesRootSubSub(categorySubSelected);
 
@@ -189,8 +216,13 @@ const ProductCreatePageContentCategory = () => {
         const fetchCategories = async () => {
             categoriesFetchRequest();
             try {
+                const params = {
+                    page: 0,
+                    size: 999999999,
+                };
                 const { data } = await axiosServer.get(
-                    "/categories/type/product"
+                    "/categories/type/product",
+                    { params }
                 );
                 categoriesFetchSuccess(data.rows);
             } catch (error) {

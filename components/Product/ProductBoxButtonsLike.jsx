@@ -21,7 +21,7 @@ const ProductBoxButtonsLike = ({ product }) => {
     };
     const handleProductButtonUnLike = async (likeId) => {
         try {
-            await axiosServer.delete(`/likes/${parseInt(likeId)}`);
+            await axiosServer.delete(`/likes/${likeId}`);
             setLike(null);
         } catch (error) {
             getError(error);

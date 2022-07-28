@@ -16,6 +16,9 @@ const StoreCreatePageContentSubmit = () => {
         try {
             const marketCreateData = {
                 ...marketCreate,
+                Categories: marketCreate.Categories.filter(
+                    (category) => category
+                ),
             };
             await axiosServer.post("/markets", marketCreateData);
         } catch (error) {

@@ -36,11 +36,7 @@ const StoreEditPageContentCategory = () => {
         const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        marketEditUpdateCategory([
-            parseInt(value),
-            parseInt(subCategory),
-            parseInt(subSubCategory),
-        ]);
+        marketEditUpdateCategory([value, subCategory, subSubCategory]);
     };
     const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
@@ -48,18 +44,14 @@ const StoreEditPageContentCategory = () => {
         const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        marketEditUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(value),
-            parseInt(subSubCategory),
-        ]);
+        marketEditUpdateCategory([categorySelected, value, subSubCategory]);
     };
     const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         marketEditUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(categorySubSelected),
-            parseInt(value),
+            categorySelected,
+            categorySubSelected,
+            value,
         ]);
     };
 
@@ -67,13 +59,13 @@ const StoreEditPageContentCategory = () => {
         return categories.filter((category) => category.parentId === 0);
     };
     const handleCategoriesRootSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categories.filter((category) => category.parentId === parentId)
             : [];
     };
     const handleCategoriesRootSubSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categories.filter((category) => category.parentId === parentId)
             : [];

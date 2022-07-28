@@ -24,8 +24,10 @@ const ProductEditPageContentSubmit = () => {
                 ...productEdit,
                 price: Number(productEdit.price),
                 quantity: Number(productEdit.quantity),
-                MarketId: Number(productEdit.MarketId),
-                Categories: productEdit.Categories.filter((p) => !isNaN(p)),
+                Market: productEdit.Market,
+                Categories: productEdit.Categories.filter(
+                    (category) => category
+                ),
             };
             await axiosServer.put(`/products/${product._id}`, productEditData);
         } catch (error) {

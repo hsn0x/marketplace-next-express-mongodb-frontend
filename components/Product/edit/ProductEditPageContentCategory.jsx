@@ -36,11 +36,7 @@ const ProductEditPageContentCategory = () => {
         const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        productEditUpdateCategory([
-            parseInt(value),
-            parseInt(subCategory),
-            parseInt(subSubCategory),
-        ]);
+        productEditUpdateCategory([value, subCategory, subSubCategory]);
     };
     const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
@@ -48,18 +44,14 @@ const ProductEditPageContentCategory = () => {
         const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        productEditUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(value),
-            parseInt(subSubCategory),
-        ]);
+        productEditUpdateCategory([categorySelected, value, subSubCategory]);
     };
     const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         productEditUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(categorySubSelected),
-            parseInt(value),
+            categorySelected,
+            categorySubSelected,
+            value,
         ]);
     };
 
@@ -67,13 +59,13 @@ const ProductEditPageContentCategory = () => {
         return categories.filter((category) => category.parentId === 0);
     };
     const handleCategoriesRootSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categories.filter((category) => category.parentId === parentId)
             : [];
     };
     const handleCategoriesRootSubSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categories.filter((category) => category.parentId === parentId)
             : [];
@@ -197,8 +189,13 @@ const ProductEditPageContentCategory = () => {
             categoriesFetchRequest();
 
             try {
+                const params = {
+                    page: 0,
+                    size: 999999999,
+                };
                 const { data } = await axiosServer.get(
-                    "/categories/type/product"
+                    "/categories/type/product",
+                    { params }
                 );
                 categoriesFetchSuccess(data.rows);
 

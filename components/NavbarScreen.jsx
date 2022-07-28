@@ -206,7 +206,7 @@ const NavbarScreen = () => {
                                                                     ) => (
                                                                         <div
                                                                             key={
-                                                                                subCategory.id
+                                                                                subCategory._id
                                                                             }
                                                                             className="mb-2"
                                                                         >
@@ -228,7 +228,7 @@ const NavbarScreen = () => {
                                                                                         ) => (
                                                                                             <div
                                                                                                 key={
-                                                                                                    subSubCategory.id
+                                                                                                    subSubCategory._id
                                                                                                 }
                                                                                             >
                                                                                                 <Link
@@ -292,7 +292,7 @@ const NavbarScreen = () => {
                                                                     ) => (
                                                                         <div
                                                                             key={
-                                                                                subCategory.id
+                                                                                subCategory._id
                                                                             }
                                                                             className="mb-2"
                                                                         >
@@ -314,7 +314,7 @@ const NavbarScreen = () => {
                                                                                         ) => (
                                                                                             <div
                                                                                                 key={
-                                                                                                    subSubCategory.id
+                                                                                                    subSubCategory._id
                                                                                                 }
                                                                                             >
                                                                                                 <Link

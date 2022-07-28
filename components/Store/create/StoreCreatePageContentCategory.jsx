@@ -106,7 +106,6 @@ const StoreCreatePageContentCategory = () => {
     // Handle Categories Root Sub Sub
     const categoriesRootSubSub =
         handleCategoriesRootSubSub(categorySubSelected);
-    // const categoriesRootSubSub = handleCategoriesRootSub(categoriesRootSub);
 
     /**
      *  Categories Select Component

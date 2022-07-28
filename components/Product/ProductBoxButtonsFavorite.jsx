@@ -23,7 +23,7 @@ const ProductBoxButtonsFavorite = ({ product }) => {
     };
     const handleProductButtonUnFavorite = async (favoriteId) => {
         try {
-            await axiosServer.delete(`/favorites/${parseInt(favoriteId)}`);
+            await axiosServer.delete(`/favorites/${favoriteId}`);
             setFavorite(null);
         } catch (error) {
             getError(error);

@@ -31,9 +31,9 @@ const ProductEditPageContentStore = () => {
                             id="store"
                             required={true}
                             onChange={(e) =>
-                                productEditUpdateStore(parseInt(e.target.value))
+                                productEditUpdateStore(e.target.value)
                             }
-                            value={edit?.MarketId || ""}
+                            value={edit?.Market || ""}
                         >
                             {profile &&
                                 profile.Markets.map((store) => (

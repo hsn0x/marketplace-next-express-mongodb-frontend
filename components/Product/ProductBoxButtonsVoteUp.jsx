@@ -21,7 +21,7 @@ const ProductBoxButtonsVote = ({ product }) => {
     };
     const handleProductButtonUnVote = async (voteId) => {
         try {
-            await axiosServer.delete(`/votes/${parseInt(voteId)}`);
+            await axiosServer.delete(`/votes/${voteId}`);
             setVote(null);
         } catch (error) {
             getError(error);

@@ -114,7 +114,7 @@ const CategoriesBox3 = ({ categories }) => {
                             categoryParent.subCategory[
                                 categorySubCategoryIndex
                             ];
-                        if (categorySubCategory.id == category.parentId) {
+                        if (categorySubCategory._id == category.parentId) {
                             subSubCategories.push(category._id);
                             categorySubCategory.subSubCategory.push(category);
                         }
@@ -182,7 +182,7 @@ const CategoriesBox3 = ({ categories }) => {
                             <span>
                                 {category.subCategory.map((subCategory) => {
                                     return (
-                                        <span key={subCategory.id}>
+                                        <span key={subCategory._id}>
                                             <span className="bg-gray-300 p-2 rounded-lg mr-2">
                                                 {subCategory.name}
                                             </span>
@@ -192,7 +192,7 @@ const CategoriesBox3 = ({ categories }) => {
                                                         return (
                                                             <span
                                                                 key={
-                                                                    subSubCategory.id
+                                                                    subSubCategory._id
                                                                 }
                                                             >
                                                                 <span className="bg-gray-300 p-2 rounded-lg mr-2">

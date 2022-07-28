@@ -80,9 +80,7 @@ const ProductEditPageContentInformations = () => {
                             required={true}
                             value={edit?.quantity || ""}
                             onChange={(e) =>
-                                productEditUpdateQuantity(
-                                    parseInt(e.target.value)
-                                )
+                                productEditUpdateQuantity(e.target.value)
                             }
                         />
                     </div>

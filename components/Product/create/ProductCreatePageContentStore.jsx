@@ -30,9 +30,7 @@ const ProductCreatePageContentStore = () => {
                             id="store"
                             required={true}
                             onChange={(e) =>
-                                productCreateUpdateStore(
-                                    parseInt(e.target.value)
-                                )
+                                productCreateUpdateStore(e.target.value)
                             }
                         >
                             {profile &&

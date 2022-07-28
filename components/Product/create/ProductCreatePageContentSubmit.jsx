@@ -21,11 +21,12 @@ const ProductCreatePageContentSubmit = () => {
 
     const handleCreateProduct = async () => {
         try {
+            console.log({ productCreate });
             const productCreateData = {
                 ...productCreate,
                 price: Number(productCreate.price),
                 quantity: Number(productCreate.quantity),
-                MarketId: Number(productCreate.MarketId),
+                Market: productCreate.Market,
                 Categories: productCreate.Categories.filter((p) => !isNaN(p)),
             };
             await axiosServer.post("/products", productCreateData);

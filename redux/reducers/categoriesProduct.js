@@ -62,7 +62,13 @@ export const fetchCategoriesProduct = () => {
 
         categoriesProductFetchRequest();
         try {
-            const { data } = await axiosServer.get("/categories/type/product");
+            const params = {
+                page: 0,
+                size: 999999999,
+            };
+            const { data } = await axiosServer.get("/categories/type/product", {
+                params,
+            });
             categoriesProductFetchSuccess(data.rows);
         } catch (error) {
             categoriesProductFetchFail(getError(error));

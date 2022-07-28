@@ -28,7 +28,7 @@ const ProductsPageFiltersCategoriesSelect = () => {
         return categoriesProduct.filter((category) => category.parentId === 0);
     };
     const handleCategoriesRootSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categoriesProduct.filter(
                   (category) => category.parentId === parentId
@@ -36,7 +36,7 @@ const ProductsPageFiltersCategoriesSelect = () => {
             : [];
     };
     const handleCategoriesRootSubSub = (parentId) => {
-        parentId = parseInt(parentId);
+        parentId = parentId;
         return parentId != 0
             ? categoriesProduct.filter(
                   (category) => category.parentId === parentId
@@ -52,11 +52,7 @@ const ProductsPageFiltersCategoriesSelect = () => {
         const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        productsFiltersUpdateCategory([
-            parseInt(value),
-            parseInt(subCategory),
-            parseInt(subSubCategory),
-        ]);
+        productsFiltersUpdateCategory([value, subCategory, subSubCategory]);
     };
     const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
@@ -65,17 +61,17 @@ const ProductsPageFiltersCategoriesSelect = () => {
         setCategoryRootSubSubSelected(subSubCategory);
 
         productsFiltersUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(value),
-            parseInt(subSubCategory),
+            categorySelected,
+            value,
+            subSubCategory,
         ]);
     };
     const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         productsFiltersUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(categorySubSelected),
-            parseInt(value),
+            categorySelected,
+            categorySubSelected,
+            value,
         ]);
     };
 
