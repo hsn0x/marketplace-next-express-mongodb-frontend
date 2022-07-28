@@ -43,10 +43,10 @@ const StoreCreatePageContentCategory = () => {
     const handleCategorySelected = (value) => {
         setCategorySelected(value);
 
-        const subCategory = handleCategoriesRootSub(value)[0]?.id;
+        const subCategory = handleCategoriesRootSub(value)[0]?._id;
         setCategoryRootSubSelected(subCategory);
 
-        const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
+        const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?._id;
         setCategoryRootSubSubSelected(subSubCategory);
 
         marketCreateUpdateCategory([value, subCategory, subSubCategory]);
@@ -57,7 +57,7 @@ const StoreCreatePageContentCategory = () => {
     const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
 
-        const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
+        const subSubCategory = handleCategoriesRootSubSub(value)[0]?._id;
         setCategoryRootSubSubSelected(subSubCategory);
 
         marketCreateUpdateCategory([categorySelected, value, subSubCategory]);
@@ -86,7 +86,6 @@ const StoreCreatePageContentCategory = () => {
     const handleCategoriesRootSub = (parentId) => {
         return parentId != "0"
             ? categories.filter((category) => {
-                  console.log(parentId, category.parentId);
                   return category.parentId === parentId;
               })
             : [];
