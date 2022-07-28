@@ -52,8 +52,8 @@ const ProductBoxButtonsFavorite = ({ product }) => {
                 outline={favorite ? false : true}
                 onClick={() =>
                     favorite
-                        ? handleProductButtonUnFavorite(favorite.id)
-                        : handleProductButtonFavorite(product.id)
+                        ? handleProductButtonUnFavorite(favorite._id)
+                        : handleProductButtonFavorite(product._id)
                 }
             >
                 <div>

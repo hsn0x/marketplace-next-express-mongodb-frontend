@@ -48,8 +48,8 @@ const ProductBoxButtonsLike = ({ product }) => {
                 outline={like ? false : true}
                 onClick={() =>
                     like
-                        ? handleProductButtonUnLike(like.id)
-                        : handleProductButtonLike(product.id)
+                        ? handleProductButtonUnLike(like._id)
+                        : handleProductButtonLike(product._id)
                 }
             >
                 <div>

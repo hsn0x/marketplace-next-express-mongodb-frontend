@@ -30,7 +30,7 @@ const ProductPageTabsReviewsInsert = () => {
                 rate,
                 title,
                 content,
-                productId: product.id,
+                productId: product._id,
             });
         } catch (error) {}
     };

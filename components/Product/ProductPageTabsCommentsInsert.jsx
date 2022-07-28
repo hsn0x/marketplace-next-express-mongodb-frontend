@@ -19,7 +19,7 @@ const ProductPageTabsCommentsInsert = () => {
             const comment = axiosServer.post("/comments", {
                 title,
                 content,
-                productId: product.id,
+                productId: product._id,
             });
         } catch (error) {}
     };

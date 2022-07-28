@@ -176,7 +176,7 @@ const NavbarScreen = () => {
                                     (category, index) => (
                                         <div
                                             className="bg-gray-50"
-                                            key={category.id}
+                                            key={category._id}
                                         >
                                             {/* <div>
                                         <Dropdown.Header>
@@ -262,7 +262,7 @@ const NavbarScreen = () => {
                                     (category, index) => (
                                         <div
                                             className="bg-gray-50"
-                                            key={category.id}
+                                            key={category._id}
                                         >
                                             {/* <div>
                                         <Dropdown.Header>

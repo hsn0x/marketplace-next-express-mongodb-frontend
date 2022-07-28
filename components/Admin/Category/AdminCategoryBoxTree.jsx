@@ -31,7 +31,7 @@ const AdminCategoryBoxTree = ({ category, categoryType }) => {
 
     const handleCategoryDelete = async () => {
         try {
-            await axiosServer.delete(`/categories/${category.id}`);
+            await axiosServer.delete(`/categories/${category._id}`);
             fetchCategories();
         } catch (error) {
             getError(error);

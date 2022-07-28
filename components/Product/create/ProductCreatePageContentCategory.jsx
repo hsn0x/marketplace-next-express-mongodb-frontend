@@ -111,8 +111,8 @@ const ProductCreatePageContentCategory = () => {
                                 {categoriesRoot &&
                                     categoriesRoot.map((category) => (
                                         <option
-                                            key={category.id}
-                                            value={category.id}
+                                            key={category._id}
+                                            value={category._id}
                                         >
                                             {category.name}
                                         </option>
@@ -141,8 +141,8 @@ const ProductCreatePageContentCategory = () => {
                                 {categoriesRootSub &&
                                     categoriesRootSub.map((category) => (
                                         <option
-                                            key={category.id}
-                                            value={category.id}
+                                            key={category._id}
+                                            value={category._id}
                                         >
                                             {category.name}
                                         </option>
@@ -171,8 +171,8 @@ const ProductCreatePageContentCategory = () => {
                             >
                                 {categoriesRootSubSub.map((category) => (
                                     <option
-                                        key={category.id}
-                                        value={category.id}
+                                        key={category._id}
+                                        value={category._id}
                                     >
                                         {category.name}
                                     </option>

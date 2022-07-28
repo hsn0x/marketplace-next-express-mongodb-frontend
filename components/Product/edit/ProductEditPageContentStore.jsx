@@ -37,7 +37,7 @@ const ProductEditPageContentStore = () => {
                         >
                             {profile &&
                                 profile.Markets.map((store) => (
-                                    <option key={store._id} value={store.id}>
+                                    <option key={store._id} value={store._id}>
                                         {store.name}
                                     </option>
                                 ))}

@@ -29,7 +29,7 @@ const ProductBoxAction = ({ user, product }) => {
                             <Button
                                 size="xs"
                                 color="failure"
-                                onClick={() => handleProductDelete(product.id)}
+                                onClick={() => handleProductDelete(product._id)}
                             >
                                 Delete
                                 <FaTrash />

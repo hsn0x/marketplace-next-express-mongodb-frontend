@@ -44,12 +44,12 @@ const AdminCategoryBoxTreeAddNew = ({ category, categoryType }) => {
         try {
             console.log({
                 name: newCategoryInput,
-                parentId: category.id,
+                parentId: category._id,
                 type: categoryType,
             });
             await axiosServer.post("/categories", {
                 name: newCategoryInput,
-                parentId: category.id,
+                parentId: category._id,
                 type: categoryType,
             });
 

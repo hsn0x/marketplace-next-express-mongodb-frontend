@@ -48,8 +48,8 @@ const ProductBoxButtonsVote = ({ product }) => {
                 outline={vote ? false : true}
                 onClick={() =>
                     vote
-                        ? handleProductButtonUnVote(vote.id)
-                        : handleProductButtonVote(product.id)
+                        ? handleProductButtonUnVote(vote._id)
+                        : handleProductButtonVote(product._id)
                 }
             >
                 <div>

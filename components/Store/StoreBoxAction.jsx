@@ -29,7 +29,7 @@ const StoreBoxAction = ({ user, store }) => {
                             <Button
                                 size="xs"
                                 color="failure"
-                                onClick={() => handleStoreDelete(store.id)}
+                                onClick={() => handleStoreDelete(store._id)}
                             >
                                 Delete
                                 <FaTrash />

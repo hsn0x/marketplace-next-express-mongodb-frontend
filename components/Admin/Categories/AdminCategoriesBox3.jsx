@@ -66,7 +66,7 @@ const CategoriesBox3 = ({ categories }) => {
                     const categoryParent =
                         categoriesLevels.parents[categoryParentIndex];
                     if (categoryParent.id == category.parentId) {
-                        subCategories.push(category.id);
+                        subCategories.push(category._id);
                         categoryParent.subCategory.push(category);
                     }
                 }
@@ -86,7 +86,7 @@ const CategoriesBox3 = ({ categories }) => {
                 }
             );
             categories = categories.filter(
-                (category) => !subCategories.includes(category.id)
+                (category) => !subCategories.includes(category._id)
             );
 
             const subSubCategories = [];
@@ -115,7 +115,7 @@ const CategoriesBox3 = ({ categories }) => {
                                 categorySubCategoryIndex
                             ];
                         if (categorySubCategory.id == category.parentId) {
-                            subSubCategories.push(category.id);
+                            subSubCategories.push(category._id);
                             categorySubCategory.subSubCategory.push(category);
                         }
                     }
@@ -173,7 +173,7 @@ const CategoriesBox3 = ({ categories }) => {
                 return (
                     <div
                         className="bg-gray-200 rounded-lg m-2 p-2"
-                        key={category.id}
+                        key={category._id}
                     >
                         <span>
                             <span className="bg-gray-300 p-2 rounded-lg mr-2">
