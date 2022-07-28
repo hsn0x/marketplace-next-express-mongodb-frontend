@@ -40,7 +40,7 @@ const reducer = (state = initialState, action) => {
         case MARKET_EDIT_UPDATE_CATEGORY:
             return {
                 ...state,
-                edit: { ...state.edit, CategoriesIds: action.payload },
+                edit: { ...state.edit, Categories: action.payload },
             };
         case MARKET_EDIT_UPDATE_MEDIA:
             return {

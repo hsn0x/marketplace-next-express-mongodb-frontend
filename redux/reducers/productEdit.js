@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
         case PRODUCT_EDIT_UPDATE_CATEGORY:
             return {
                 ...state,
-                edit: { ...state.edit, CategoriesIds: action.payload },
+                edit: { ...state.edit, Categories: action.payload },
             };
         case PRODUCT_EDIT_UPDATE_STORE:
             return {

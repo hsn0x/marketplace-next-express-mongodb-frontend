@@ -16,9 +16,6 @@ const StoreCreatePageContentSubmit = () => {
         try {
             const marketCreateData = {
                 ...marketCreate,
-                CategoriesIds: marketCreate.CategoriesIds.filter(
-                    (p) => !isNaN(p)
-                ),
             };
             await axiosServer.post("/markets", marketCreateData);
         } catch (error) {

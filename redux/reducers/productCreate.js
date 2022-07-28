@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
         case PRODUCT_CREATE_UPDATE_CATEGORY:
             return {
                 ...state,
-                create: { ...state.create, CategoriesIds: action.payload },
+                create: { ...state.create, Categories: action.payload },
             };
         case PRODUCT_CREATE_UPDATE_STORE:
             return {

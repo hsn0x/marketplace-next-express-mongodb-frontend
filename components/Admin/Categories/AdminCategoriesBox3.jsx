@@ -51,7 +51,7 @@ const CategoriesBox3 = ({ categories }) => {
                 (c) => c.parentId != category.parentId
             );
 
-            const subCategoriesIds = [];
+            const subCategories = [];
             for (
                 let categoryIndex = 0;
                 categoryIndex < categories.length;
@@ -66,7 +66,7 @@ const CategoriesBox3 = ({ categories }) => {
                     const categoryParent =
                         categoriesLevels.parents[categoryParentIndex];
                     if (categoryParent.id == category.parentId) {
-                        subCategoriesIds.push(category.id);
+                        subCategories.push(category.id);
                         categoryParent.subCategory.push(category);
                     }
                 }
@@ -86,10 +86,10 @@ const CategoriesBox3 = ({ categories }) => {
                 }
             );
             categories = categories.filter(
-                (category) => !subCategoriesIds.includes(category.id)
+                (category) => !subCategories.includes(category.id)
             );
 
-            const subSubCategoriesIds = [];
+            const subSubCategories = [];
             for (
                 let categoryIndex = 0;
                 categoryIndex < categories.length;
@@ -115,7 +115,7 @@ const CategoriesBox3 = ({ categories }) => {
                                 categorySubCategoryIndex
                             ];
                         if (categorySubCategory.id == category.parentId) {
-                            subSubCategoriesIds.push(category.id);
+                            subSubCategories.push(category.id);
                             categorySubCategory.subSubCategory.push(category);
                         }
                     }

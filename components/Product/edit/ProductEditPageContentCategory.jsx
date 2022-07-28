@@ -107,9 +107,7 @@ const ProductEditPageContentCategory = () => {
                                 onChange={(e) =>
                                     handleCategorySelected(e.target.value)
                                 }
-                                value={
-                                    edit?.CategoriesIds[0] || categorySelected
-                                }
+                                value={edit?.Categories[0] || categorySelected}
                             >
                                 <option>Select Category</option>
                                 {categoriesRoot &&
@@ -141,8 +139,7 @@ const ProductEditPageContentCategory = () => {
                                     )
                                 }
                                 value={
-                                    edit?.CategoriesIds[1] ||
-                                    categorySubSelected
+                                    edit?.Categories[1] || categorySubSelected
                                 }
                             >
                                 {categoriesRootSub &&
@@ -175,7 +172,7 @@ const ProductEditPageContentCategory = () => {
                                     )
                                 }
                                 value={
-                                    edit?.CategoriesIds[2] ||
+                                    edit?.Categories[2] ||
                                     categorySubSubSelected
                                 }
                             >
@@ -205,15 +202,15 @@ const ProductEditPageContentCategory = () => {
                 );
                 categoriesFetchSuccess(data.rows);
 
-                setCategorySelected(edit.CategoriesIds[0] || 0);
-                setCategoryRootSubSelected(edit.CategoriesIds[1] || 0);
-                setCategoryRootSubSubSelected(edit.CategoriesIds[2] || 0);
+                setCategorySelected(edit.Categories[0] || 0);
+                setCategoryRootSubSelected(edit.Categories[1] || 0);
+                setCategoryRootSubSubSelected(edit.Categories[2] || 0);
             } catch (error) {
                 categoriesFetchFail(getError(error));
             }
         };
         fetchCategories();
-    }, [edit?.CategoriesIds]);
+    }, [edit?.Categories]);
 
     return (
         <div>

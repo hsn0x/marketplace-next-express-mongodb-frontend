@@ -23,7 +23,7 @@ const ProductsPageFiltersSubmit = () => {
             ...filters,
             minPrice: filters.minPrice && Number(filters.minPrice),
             maxPrice: filters.maxPrice && Number(filters.maxPrice),
-            CategoriesIds: filters.CategoriesIds.filter((c) => !isNaN(c)),
+            Categories: filters.Categories.filter((c) => !isNaN(c)),
         };
         try {
             const { data } = await axiosServer.get(

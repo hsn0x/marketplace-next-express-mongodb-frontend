@@ -26,9 +26,7 @@ const ProductCreatePageContentSubmit = () => {
                 price: Number(productCreate.price),
                 quantity: Number(productCreate.quantity),
                 MarketId: Number(productCreate.MarketId),
-                CategoriesIds: productCreate.CategoriesIds.filter(
-                    (p) => !isNaN(p)
-                ),
+                Categories: productCreate.Categories.filter((p) => !isNaN(p)),
             };
             await axiosServer.post("/products", productCreateData);
         } catch (error) {

@@ -17,9 +17,7 @@ const StoreEditPageContentSubmit = () => {
         try {
             const marketEditData = {
                 ...marketEdit,
-                CategoriesIds: marketEdit.CategoriesIds.filter(
-                    (p) => !isNaN(p)
-                ),
+                Categories: marketEdit.Categories.filter((p) => !isNaN(p)),
             };
             await axiosServer.put(`/markets/${market.id}`, marketEditData);
         } catch (error) {

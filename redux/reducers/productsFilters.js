@@ -10,7 +10,7 @@ const initialState = {
     filters: {
         minPrice: null,
         maxPrice: null,
-        CategoriesIds: [],
+        Categories: [],
     },
     products: [],
 };
@@ -54,7 +54,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 filters: {
                     ...state.filters,
-                    CategoriesIds: action.payload,
+                    Categories: action.payload,
                 },
             };
         default:
