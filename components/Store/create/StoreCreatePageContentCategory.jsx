@@ -7,24 +7,39 @@ import { categoriesActions, marketCreateActions } from "../../../redux/actions";
 import { getError } from "../../../utils/error";
 
 const StoreCreatePageContentCategory = () => {
+    /**
+     * @type {ReduxDispatch}
+     */
     const dispatch = useDispatch();
-    const [categorySelected, setCategorySelected] = useState(0);
-    const [categorySubSelected, setCategoryRootSubSelected] = useState(0);
-    const [categorySubSubSelected, setCategoryRootSubSubSelected] = useState(0);
+    /**
+     * Categories States
+     */
+    const [categorySelected, setCategorySelected] = useState("0");
+    const [categorySubSelected, setCategoryRootSubSelected] = useState("0");
+    const [categorySubSubSelected, setCategoryRootSubSubSelected] =
+        useState("0");
 
+    /**
+     * Categories Fetched
+     */
     const { categories, loading } = useSelector(({ categories }) => categories);
 
+    /**
+     * Categories Actions
+     */
     const {
         categoriesFetchFail,
         categoriesFetchRequest,
         categoriesFetchSuccess,
     } = bindActionCreators(categoriesActions, dispatch);
-
     const { marketCreateUpdateCategory } = bindActionCreators(
         marketCreateActions,
         dispatch
     );
 
+    /**
+     * Handle Category Selected
+     */
     const handleCategorySelected = (value) => {
         setCategorySelected(value);
 
@@ -34,55 +49,69 @@ const StoreCreatePageContentCategory = () => {
         const subSubCategory = handleCategoriesRootSubSub(subCategory)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        marketCreateUpdateCategory([
-            parseInt(value),
-            parseInt(subCategory),
-            parseInt(subSubCategory),
-        ]);
+        marketCreateUpdateCategory([value, subCategory, subSubCategory]);
     };
-    const handleCategoryRootSubSelected = (value) => {
+    /**
+     * Handle Category Selected Root Sub
+     */
+    const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
 
         const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
         setCategoryRootSubSubSelected(subSubCategory);
 
-        marketCreateUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(value),
-            parseInt(subSubCategory),
-        ]);
+        marketCreateUpdateCategory([categorySelected, value, subSubCategory]);
     };
-    const handleCategoryRootSubSubSelected = (value) => {
+    /**
+     * Handle Category Selected Root Sub Sub
+     */
+    const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         marketCreateUpdateCategory([
-            parseInt(categorySelected),
-            parseInt(categorySubSelected),
-            parseInt(value),
+            categorySelected,
+            categorySubSelected,
+            value,
         ]);
     };
 
+    /**
+     * Handle Categories Root
+     */
     const handleCategoriesRoot = (categories) => {
-        return categories.filter((category) => category.parentId === 0);
+        return categories.filter((category) => category.parentId === "0");
     };
+    /**
+     * Handle Categories Root Sub
+     */
     const handleCategoriesRootSub = (parentId) => {
-        parentId = parseInt(parentId);
-        return parentId != 0
-            ? categories.filter((category) => category.parentId === parentId)
+        return parentId != "0"
+            ? categories.filter((category) => {
+                  console.log(parentId, category.parentId);
+                  return category.parentId === parentId;
+              })
             : [];
     };
+    /**
+     * Handle Categories Root Sub Sub
+     */
     const handleCategoriesRootSubSub = (parentId) => {
-        parentId = parseInt(parentId);
-        return parentId != 0
+        return parentId != "0"
             ? categories.filter((category) => category.parentId === parentId)
             : [];
     };
 
+    // Handle Categories Root
     const categoriesRoot = handleCategoriesRoot(categories);
+    // Handle Categories Root Sub
     const categoriesRootSub = handleCategoriesRootSub(categorySelected);
+    // Handle Categories Root Sub Sub
     const categoriesRootSubSub =
         handleCategoriesRootSubSub(categorySubSelected);
     // const categoriesRootSubSub = handleCategoriesRootSub(categoriesRootSub);
 
+    /**
+     *  Categories Select Component
+     */
     const CategoriesSelect = ({
         categoriesRoot,
         categoriesRootSub,
@@ -111,8 +140,8 @@ const StoreCreatePageContentCategory = () => {
                                 {categoriesRoot &&
                                     categoriesRoot.map((category) => (
                                         <option
-                                            key={category.id}
-                                            value={category.id}
+                                            key={category._id}
+                                            value={category._id}
                                         >
                                             {category.name}
                                         </option>
@@ -132,7 +161,7 @@ const StoreCreatePageContentCategory = () => {
                                 id="category"
                                 required={true}
                                 onChange={(e) =>
-                                    handleCategoryRootSubSelected(
+                                    handleCategorySelectedRootSub(
                                         e.target.value
                                     )
                                 }
@@ -141,8 +170,8 @@ const StoreCreatePageContentCategory = () => {
                                 {categoriesRootSub &&
                                     categoriesRootSub.map((category) => (
                                         <option
-                                            key={category.id}
-                                            value={category.id}
+                                            key={category._id}
+                                            value={category._id}
                                         >
                                             {category.name}
                                         </option>
@@ -163,7 +192,7 @@ const StoreCreatePageContentCategory = () => {
                                 id="category"
                                 required={true}
                                 onChange={(e) =>
-                                    handleCategoryRootSubSubSelected(
+                                    handleCategorySelectedRootSubSub(
                                         e.target.value
                                     )
                                 }
@@ -171,8 +200,8 @@ const StoreCreatePageContentCategory = () => {
                             >
                                 {categoriesRootSubSub.map((category) => (
                                     <option
-                                        key={category.id}
-                                        value={category.id}
+                                        key={category._id}
+                                        value={category._id}
                                     >
                                         {category.name}
                                     </option>
@@ -189,8 +218,15 @@ const StoreCreatePageContentCategory = () => {
         const fetchCategories = async () => {
             categoriesFetchRequest();
             try {
+                const params = {
+                    page: 0,
+                    size: 99999999999,
+                };
                 const { data } = await axiosServer.get(
-                    "/categories/type/market"
+                    "/categories/type/market",
+                    {
+                        params,
+                    }
                 );
                 categoriesFetchSuccess(data.rows);
             } catch (error) {

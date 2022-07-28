@@ -42,7 +42,7 @@ const ProductEditPageContentCategory = () => {
             parseInt(subSubCategory),
         ]);
     };
-    const handleCategoryRootSubSelected = (value) => {
+    const handleCategorySelectedRootSub = (value) => {
         setCategoryRootSubSelected(value);
 
         const subSubCategory = handleCategoriesRootSubSub(value)[0]?.id;
@@ -54,7 +54,7 @@ const ProductEditPageContentCategory = () => {
             parseInt(subSubCategory),
         ]);
     };
-    const handleCategoryRootSubSubSelected = (value) => {
+    const handleCategorySelectedRootSubSub = (value) => {
         setCategoryRootSubSubSelected(value);
         productEditUpdateCategory([
             parseInt(categorySelected),
@@ -136,7 +136,7 @@ const ProductEditPageContentCategory = () => {
                                 id="category"
                                 required={true}
                                 onChange={(e) =>
-                                    handleCategoryRootSubSelected(
+                                    handleCategorySelectedRootSub(
                                         e.target.value
                                     )
                                 }
@@ -170,7 +170,7 @@ const ProductEditPageContentCategory = () => {
                                 id="category"
                                 required={true}
                                 onChange={(e) =>
-                                    handleCategoryRootSubSubSelected(
+                                    handleCategorySelectedRootSubSub(
                                         e.target.value
                                     )
                                 }
